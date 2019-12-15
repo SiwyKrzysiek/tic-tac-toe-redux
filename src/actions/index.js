@@ -20,8 +20,11 @@ const setFieldToValue = (index, value) => {
 
 export const setField = (index) => {
   return (dispatch, getState) => {
-    const activePlayer = getState().activePlayer;
-    const playerMarker = activePlayer === 0 ? "O" : "X";
+    const state = getState();
+    if (state.board[index] !== "") // Field is taken
+      return;
+
+    const playerMarker = state.activePlayer === 0 ? "O" : "X";
 
     dispatch(setFieldToValue(index, playerMarker));
     dispatch(changePlayer());
