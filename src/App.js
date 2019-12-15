@@ -1,20 +1,20 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-// Test action createros
+// Test action creators
 const increment = (value) => {
   return {
     type: "INCREMENT",
     value: value
-  }
-}
+  };
+};
 
 const decrement = (value) => {
   return {
     type: "DECREMENT",
     value: value
-  }
-}
+  };
+};
 
 
 function App() {
