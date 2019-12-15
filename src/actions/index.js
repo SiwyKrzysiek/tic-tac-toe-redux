@@ -6,6 +6,8 @@ export const DECREMENT = "DECREMENT";
 
 export const SET_FIELD = "SET_FIELD";
 
+export const CHANGE_PLAYER = "CHANGE_PLAYER";
+
 // Action creators
 
 export const setField = (index, value) => {
@@ -13,6 +15,12 @@ export const setField = (index, value) => {
     type: SET_FIELD,
     index: index,
     value: value
+  };
+};
+
+export const changePlayer = () => {
+  return {
+    type: CHANGE_PLAYER
   };
 };
 
