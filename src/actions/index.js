@@ -4,7 +4,18 @@ export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 // export const INCREMENT_AFTER_DELAY = "INCREMENT_AFTER_DELAY";
 
+export const SET_FIELD = "SET_FIELD";
+
 // Action creators
+
+export const setField = (index, value) => {
+  return {
+    type: SET_FIELD,
+    index: index,
+    value: value
+  };
+};
+
 export const increment = (value) => {
   return {
     type: "INCREMENT",
