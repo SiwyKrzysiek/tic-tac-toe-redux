@@ -10,3 +10,10 @@
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
+
+@media (max-width: 750px) {
+    .game-board {
+        width: 70vw;
+        height: 70vw;
+    }
+}
