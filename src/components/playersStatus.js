@@ -21,7 +21,7 @@ PlayersStatus.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    activePlayer: state.activePlayer
+    activePlayer: state.players.activePlayer
   };
 };
 

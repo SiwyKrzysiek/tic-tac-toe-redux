@@ -27,7 +27,7 @@ Board.propTypes = {
 const mapStateToProps = (state) => {
   return {
     board: state.board,
-    activePlayer: state.activePlayer
+    activePlayer: state.players.activePlayer
   };
 };
 

@@ -6,5 +6,5 @@ import playerReducer from "./playerReducer";
 export default combineReducers({
   counter: counterReducer,
   board: boardReducer,
-  activePlayer: playerReducer
+  players: playerReducer
 });
