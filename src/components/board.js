@@ -9,14 +9,16 @@ function Board(props) {
   return (
     <div className="game-board">
       {props.board.map((v, i) => (
-        <Field key={i} value={v}></Field>
+        <Field key={i} value={v}
+          onClick={() => props.onFieldClikc(i)}></Field>
       ))}
     </div>
   );
 }
 
 Board.propTypes = {
-  board: PropTypes.arrayOf(String)
+  board: PropTypes.arrayOf(String),
+  onFieldClikc: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -27,7 +29,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFieldClikc: (i) => dispatch(setField(i, "X"))
+    onFieldClikc: (i) => dispatch(setField(i, "X")) // TODO: Change to active player
   };
 };
 
