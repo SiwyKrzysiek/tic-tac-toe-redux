@@ -1,6 +1,5 @@
 import { SET_FIELD } from "../actions";
 
-
 const initalState = Array(9).fill("");
 
 const boardReducer = (state = initalState, action) => {

@@ -10,11 +10,21 @@ export const CHANGE_PLAYER = "CHANGE_PLAYER";
 
 // Action creators
 
-export const setField = (index, value) => {
+const setFieldToValue = (index, value) => {
   return {
     type: SET_FIELD,
     index: index,
     value: value
+  };
+};
+
+export const setField = (index) => {
+  return (dispatch, getState) => {
+    const activePlayer = getState().activePlayer;
+    const playerMarker = activePlayer === 0 ? "O" : "X";
+
+    dispatch(setFieldToValue(index, playerMarker));
+    dispatch(changePlayer());
   };
 };
 
@@ -39,7 +49,7 @@ export const decrement = (value) => {
 };
 
 export const incrementAfterDelay = (value, delay = 200) => {
-  return (dispatch, state) => { // thunk will inject them
+  return (dispatch, getState) => { // thunk will inject them
     setTimeout(() => {
       dispatch(increment(value));
 

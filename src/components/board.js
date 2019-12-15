@@ -6,6 +6,8 @@ import Field from "./field";
 import "../styles/board.css";
 
 function Board(props) {
+  // const playerMarker = (player) => (player === 0 ? "O" : "X");
+
   return (
     <div className="game-board">
       {props.board.map((v, i) => (
@@ -18,18 +20,20 @@ function Board(props) {
 
 Board.propTypes = {
   board: PropTypes.arrayOf(String),
+  activePlayer: PropTypes.number,
   onFieldClikc: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
   return {
-    board: state.board
+    board: state.board,
+    activePlayer: state.activePlayer
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFieldClikc: (i) => dispatch(setField(i, "X")) // TODO: Change to active player
+    onFieldClikc: (i) => dispatch(setField(i)) // TODO: Change to active player
   };
 };
 
