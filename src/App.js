@@ -1,4 +1,5 @@
 import React from "react";
+import { createStore } from "redux";
 import "./App.css";
 
 // Test action creators
@@ -16,6 +17,25 @@ const decrement = (value) => {
   };
 };
 
+// Test reducer
+const rootReducer = (state = 0, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return state + action.value;
+    case "DECREMENT":
+      return state - action.value;
+    default:
+      return state;
+  }
+};
+
+// Test store
+const store = createStore(rootReducer);
+
+store.subscribe(() => console.log(store.getState()));
+
+store.dispatch(increment(2));
+store.dispatch(decrement(1));
 
 function App() {
   return (
