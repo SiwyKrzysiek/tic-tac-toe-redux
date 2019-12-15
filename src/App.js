@@ -1,6 +1,22 @@
 import React from 'react';
 import './App.css';
 
+// Test action createros
+const increment = (value) => {
+  return {
+    type: "INCREMENT",
+    value: value
+  }
+}
+
+const decrement = (value) => {
+  return {
+    type: "DECREMENT",
+    value: value
+  }
+}
+
+
 function App() {
   return (
     <div className="App">
