@@ -11,8 +11,8 @@ const playerReducer = (state = initalState, action) => {
   switch (action.type) {
     case CHANGE_PLAYER:
       return {
-        ...state,
-        activePlayer: nextPlayer()
+        activePlayer: nextPlayer(),
+        timeLeft: 100
       };
     case TIMER_TIC:
       if (state.timeLeft <= 0) {
