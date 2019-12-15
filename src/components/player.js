@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 function Player(props) {
@@ -9,9 +10,9 @@ function Player(props) {
       {props.isActive &&
         <div className="progress" style={{ width: "100%" }}>
           <div className="progress-bar progress-bar-striped progress-bar-animated"
-            role="progressbar" aria-valuenow="75"
+            role="progressbar" aria-valuenow={props.timeLeft}
             aria-valuemin="0" aria-valuemax="100"
-            style={{ width: "75%" }}>
+            style={{ width: props.timeLeft + "%" }}>
           </div>
         </div>
       }
@@ -22,7 +23,16 @@ function Player(props) {
 
 Player.propTypes = {
   playerName: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired
+  isActive: PropTypes.bool.isRequired,
+  timeLeft: PropTypes.number.isRequired
 };
 
-export default Player;
+const mapStateToProps = (state) => {
+  return {
+    timeLeft: state.players.timeLeft
+  };
+};
+
+export default connect(
+  mapStateToProps
+)(Player);

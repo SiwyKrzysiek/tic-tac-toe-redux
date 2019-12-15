@@ -9,10 +9,14 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 
+import { timerTick } from "./actions";
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(
   applyMiddleware(thunk)
 ));
+
+setInterval(() => (store.dispatch(timerTick())), 100);
 
 ReactDOM.render(
   <Provider store={store}>

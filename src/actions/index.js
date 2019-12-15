@@ -5,8 +5,8 @@ export const DECREMENT = "DECREMENT";
 // export const INCREMENT_AFTER_DELAY = "INCREMENT_AFTER_DELAY";
 
 export const SET_FIELD = "SET_FIELD";
-
 export const CHANGE_PLAYER = "CHANGE_PLAYER";
+export const TIMER_TIC = "TIMER_TIC";
 
 // Action creators
 
@@ -34,6 +34,12 @@ export const setField = (index) => {
 export const changePlayer = () => {
   return {
     type: CHANGE_PLAYER
+  };
+};
+
+export const timerTick = () => {
+  return {
+    type: TIMER_TIC
   };
 };
 

@@ -16,12 +16,12 @@ function PlayersStatus(props) {
 }
 
 PlayersStatus.propTypes = {
-  activePlayer: PropTypes.number.isRequired
+  activePlayer: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state) => {
   return {
-    activePlayer: state.players.activePlayer
+    activePlayer: state.players.activePlayer,
   };
 };
 
