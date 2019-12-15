@@ -3,6 +3,8 @@
 My first React project with Redux.  
 Goal of tis project is to create tic tac toe game with side effect actions using Redux architecture.
 
+You can view the [project in action](https://siwykrzysiek.github.io/tic-tac-toe-redux/).
+
 ## Available Scripts
 
 In the project directory, you can run:
