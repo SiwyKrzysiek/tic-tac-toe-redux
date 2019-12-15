@@ -4,6 +4,7 @@ import { setField } from "../actions";
 import PropTypes from "prop-types";
 import Field from "./field";
 import "../styles/board.css";
+import "../styles/gameField.css";
 
 function Board(props) {
   // const playerMarker = (player) => (player === 0 ? "O" : "X");

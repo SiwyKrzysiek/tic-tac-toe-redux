@@ -9,9 +9,16 @@
     align-items: center;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 480px) {
     .game-field {
         border: 4px solid #2c3e50;
         font-size: 2.5em;
+    }
+}
+
+@media (max-width: 310px) {
+    .game-field {
+        border: 4px solid #2c3e50;
+        font-size: 10vw;
     }
 }
